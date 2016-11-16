@@ -46,11 +46,16 @@
 				          	<div class="item-servicio">
 
 					          	<a href="<?= get_permalink( $servicio->ID ); ?>">
+
+					          		<figure class="featured-image">
+
 						          	<!-- Conseguir imagen -->
 						          	<?php 
 						          		$img_servicio = get_the_post_thumbnail( $servicio->ID , array('',189) , array('class'=>'img-fluid') ); 
-						          		if( !empty($img_servicio) ) echo $img_servicio;
-						          	?>
+						          		if( !empty($img_servicio) ) echo $img_servicio; ?>
+
+						          	</figure> <!-- /.featured-image -->
+
 					          	</a> <!-- /link -->
 
 					          	<!-- Titulo del servicio -->
