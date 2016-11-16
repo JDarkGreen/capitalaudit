@@ -502,13 +502,13 @@ body,html
 		padding        : 0
 		li 
 			a 
+				+transition( all 200ms ease-in )
 				border-right   : 2px solid $pretelli_gray_link
 				color          : $pretelli_gray_link
-				font-weight    : 600 
+				font-size      : 14px
 				line-height    : 1em 
 				padding        : 0 20px 
 				text-decoration: none
-				+transition( all 200ms ease-in )
 				//Hover u Active
 				&:hover, &.active 
 					color: #001F90
