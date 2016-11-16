@@ -1,0 +1,26 @@
+/*
+Theme Name: Capital Audit Theme
+Theme URI: 
+Author: JDarkgreen - Ingenioart
+Author URI: 
+Description: Una web hecha en wordpress - Capital Audit Theme
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags       : 
+Text Domain: kariel-theme
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what 
+you've learned with others.
+*/
+
+@import url("css/bootstrap.min.css");  
+@import url("css/owl.carousel.css"); 
+@import url("css/font-awesome.min.css"); 
+@import url("css/parsley.css");
+@import url("css/fancybox/jquery.fancybox.css");
+
+/* slidebars */
+@import url("css/slidebars.min.css"); 
+@import url("css/master.css");
