@@ -40,10 +40,14 @@ $options = get_option('theme_custom_settings');
  * Url Logo del Tema
  */
 
-if( get_header_image() !== '' ) : 
-	$url_logo = get_header_image();
+if( isset($options['logo']) && !empty($options['logo']) ) : 
+
+	$url_logo = $options['logo'];
+
 else:
+
 	$url_logo = IMAGES . '/slider_inventarios_capital_audit.png';
+
 endif;
 
 ?>

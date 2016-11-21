@@ -1,0 +1,71 @@
+/*
+ * File Sass: Nosotros Sass;
+ * Despliega todo lo relacionado a la sección o página
+ * Nosotros
+ */
+
+
+@import "compass/css3"
+
+//Tabs
+.pageNosotros__tabs
+	margin: 45px auto 0
+	//Sobreescribir estilos
+	.panel-default
+		.panel-heading
+			.panel-title
+				a 	
+					background     : #001F90
+					color          : white 
+					display        : block
+					font-size      : 16px 
+					padding        : 8px 10px 
+					text-decoration: none 
+
+//Sección de Staff
+#staffMembers
+	margin : 60px auto
+
+//Imágenes Destacadas nosotros
+.featured-item-nosotros
+	background-position: center 
+	background-size    : cover 
+	height             : 240px
+	margin             : 0 10px 20px 0 
+	overflow           : hidden 
+	width              : calc( 100%/4 - ( (3*10px) / 4 ) )
+
+	&:nth-child(4n) , &:last-child 
+		margin-right : 0
+
+	//:hover
+	&:hover
+		+opacity( .9 )
+
+		img 
+			+scale( 1.2 )
+
+		figcaption 
+			top : 0
+
+	//Image
+	img 
+		+transition( all 700ms ease )
+
+	//Caption
+	figcaption 
+		+transition( all 900ms ease-in-out )
+		background: rgba(0,0,0,.5)
+		bottom    : 0 
+		color     : white
+		left      : 0 
+		padding   : 10px 12px
+		position  : absolute
+		right     : 0
+		top       : 70%
+
+		h3 
+			font-size: 18px 
+			margin   : 0 
+		span 
+			font-size : 13px

@@ -477,20 +477,11 @@ body,html
 /**-------------------------  PAGINA NOSOTROS - EMPRESA ------------------------------**/
 /***************************************************************************************/
 
-//Tabs
-.pageNosotros__tabs
-	margin: 45px auto 0
-	//Sobreescribir estilos
-	.panel-default
-		.panel-heading
-			.panel-title
-				a 	
-					background     : #001F90
-					color          : white 
-					display        : block
-					font-size      : 16px 
-					padding        : 8px 10px 
-					text-decoration: none 
+/*
+ * Importar Sass de Nosotros
+ */
+@import 'sources/nosotros.sass'
+
 
 /***************************************************************************************/
 /**-------------------------  PAGINA SERVICIOS  --------------------------------------**/
@@ -674,6 +665,13 @@ body,html
 /**-------------------------- FOOTER  -----------------------------------------------**/
 /***************************************************************************************/
 
+//Logo en Footer
+#footer-logo 
+	display  : inline-block
+	height   : auto 
+	max-width: 205px
+
+//Footer
 .mainFooter
 	background     : url("../images/footer/bg-footer.jpg") no-repeat 
 	background-size: 100% 100% 
@@ -714,7 +712,12 @@ body,html
 				&.email
 					&:before 
 						background: url("../images/contacto/iconos_contacto_mail.png")
-
+				
+				//Párrafo
+				p 
+					display       : inline-block
+					margin        : 0
+					vertical-align: top 
 
 
 		//menu de redes sociales 
@@ -736,6 +739,10 @@ body,html
 					&:hover
 						i 
 							+scale( 1.2 )
+
+//Sección de Contacto
+#footer-section-contact
+	padding : 0 0 0 30%
 
 //subtitulos en el footer
 .mainFooter__subtitle

@@ -156,7 +156,7 @@ function theme_customize_register($wp_customize) {
 		'label'    => __('Escribe la Direccion del contacto ', LANG ),
 		'section'  => 'theme_contact_address',
 		'settings' => 'theme_custom_settings[contact_address]',
-		'type'     => 'text'
+		'type'     => 'textarea'
 	));
 
 	//Customizar MAPA
@@ -226,6 +226,7 @@ function theme_customize_register($wp_customize) {
 		'settings' => 'theme_custom_settings[text_mision]',
 		'type'     => 'textarea'
 	));	
+	
 	/* VISION */
 	$wp_customize->add_setting('theme_custom_settings[text_vision]', array(
 		'default' => '',
@@ -238,6 +239,17 @@ function theme_customize_register($wp_customize) {
 		'type'     => 'textarea'
 	));
 
+	/* VALORES */
+	$wp_customize->add_setting('theme_custom_settings[text_valores]', array(
+		'default' => '',
+		'type' => 'option'
+	));
+	$wp_customize->add_control('theme_custom_settings[text_valores]', array(
+		'label'    => __('Escribe el texto VALORES', LANG),
+		'section'  => 'theme_mision_vision',
+		'settings' => 'theme_custom_settings[text_valores]',
+		'type'     => 'textarea'
+	));
+
 	
 }	
-?>

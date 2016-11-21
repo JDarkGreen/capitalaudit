@@ -34,8 +34,7 @@
 					?> 
 				</div> <!-- /.text-justify -->
 
-				<!-- Separación  --> 
-				<br/><br/>
+				<!-- Espacio  --> 
 
 				<!-- Logo de Empresa -->
 				<?php 
@@ -106,9 +105,32 @@
 	    	</div>
 	    	<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo"> <?= apply_filters('the_content', $options['text_vision'] ); ?> </div>
 	  	</div>
+		<?php else: echo "<p>Actualizando Contenido Visión</p>"; endif; ?>	
+
+		<!-- Valores-->
+		<?php if( isset( $options['text_valores'] ) && !empty($options['text_valores'] ) ) : ?>
+	  	<div class="panel panel-default">
+	    	<div class="panel-heading" role="tab" id="headingThree">
+	      	<h4 class="panel-title text-uppercase">
+	        	<a class="collapsed" data-toggle="collapse" data-parent="#accordion-nosotros" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> <?php _e('+ valores' ); ?> </a>
+	      	</h4>
+	    	</div>
+	    	<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo"> <?= apply_filters('the_content', $options['text_valores'] ); ?> </div>
+	  	</div>
 		<?php else: echo "<p>Actualizando Contenido Visión</p>"; endif; ?>
 
 	</section> <!-- /.#accordion-nosotros -->
+
+	<?php
+	/* Sección de Miembros de Staff */
+		$path_staff = realpath( dirname(dirname(__FILE__)) . '/partials/nosotros/section-staff.php' );
+		if( $path_staff ) include( $path_staff ); 
+
+
+	/* Sección de Marcas */
+		$path_marcas = realpath( dirname(dirname(__FILE__)) . '/partials/nosotros/section-marcas.php' );
+		if( $path_marcas ) include( $path_marcas ); ?>
+
 
 	<!-- Linea de Separación --> <div class="line-separator"></div>
 

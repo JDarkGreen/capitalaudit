@@ -101,14 +101,79 @@ function pretelli_create_post_type(){
 	);
 
 
+	/*|>>>>>>>>>>>>>>>>>>>> STAFF  <<<<<<<<<<<<<<<<<<<<|*/
+	
+	$labels_staff = array(
+		'name'               => __('Staff'),
+		'singular_name'      => __('Integrante'),
+		'add_new'            => __('Nuevo Integrante'),
+		'add_new_item'       => __('Agregar nuevo Integrante'),
+		'edit_item'          => __('Editar Integrante'),
+		'view_item'          => __('Ver Integrante'),
+		'search_items'       => __('Buscar Integrante'),
+		'not_found'          => __('Integrante no encontrado'),
+		'not_found_in_trash' => __('Integrante no encontrado en la papelera'),
+	);
+
+	$args_staff = array(
+		'labels'          => $labels_staff,
+		'has_archive'     => true,
+		'public'          => true,
+		'hierachical'     => false,
+		'supports'        => array('title','editor','excerpt','custom-fields','thumbnail','page-attributes'),
+		'taxonomies'      => array('post-tag','category'),
+		'menu_icon'       => 'dashicons-groups',
+	);
+
+
+	/*|>>>>>>>>>>>>>>>>>>>> MARCAS  <<<<<<<<<<<<<<<<<<<<|*/
+	
+	$labels_marcas = array(
+		'name'               => __('Marcas'),
+		'singular_name'      => __('Marca'),
+		'add_new'            => __('Nueva Marca'),
+		'add_new_item'       => __('Agregar nueva Marca'),
+		'edit_item'          => __('Editar Marca'),
+		'view_item'          => __('Ver Marca'),
+		'search_items'       => __('Buscar Marca'),
+		'not_found'          => __('Marca no encontrada'),
+		'not_found_in_trash' => __('Marca no encontrada en la papelera'),
+	);
+
+	$args_marcas = array(
+		'labels'          => $labels_marcas,
+		'has_archive'     => true,
+		'public'          => true,
+		'hierachical'     => false,
+		'supports'        => array('title','editor','excerpt','custom-fields','thumbnail','page-attributes'),
+		'taxonomies'      => array('post-tag','category'),
+		'menu_icon'       => 'dashicons-money',
+	);
+
+
 
 
 	/*|>>>>>>>>>>>>>>>>>>>> REGISTRAR  <<<<<<<<<<<<<<<<<<<<|*/
-	register_post_type('banner', $args);
-	register_post_type('servicio', $args2);
-	register_post_type('theme-image-gallery', $args3);
-	register_post_type('theme-video-gallery', $args4);
 	
+	/* Banner o Slider Home en el Tema */
+	register_post_type('banner', $args);
+
+	/* Servicios en el Tema */
+	register_post_type('servicio', $args2);
+
+	/* Imágenes de Galería */
+	register_post_type('theme-image-gallery', $args3);
+	
+	/* Videos de Galería */
+	register_post_type('theme-video-gallery', $args4);
+
+	/* Miembros de Staff */
+	register_post_type('theme-staff', $args_staff );
+
+	/* Marcas */
+	register_post_type('theme-marcas', $args_marcas );
+	
+	/**/
 	flush_rewrite_rules();
 }
 

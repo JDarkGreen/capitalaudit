@@ -7,29 +7,37 @@
 			<div class="row container-flex">
 
 				<!-- logo  -->
-				<div class="col-xs-12 col-sm-4 container-flex container-flex-center">
+				<div class="col-xs-12 col-sm-3 container-flex container-flex-center">
 					
 					<!-- Item Footer -->
 					<section class="mainFooter__item">
-						<a href="<?= site_url()  ?>" class="text-xs-center">
-							<img src="<?= IMAGES ?>/footer/logo_inventarios_capital_audit-blanco.png" alt="logo-footer" class="center-block img-fluid" />
+						
+						<h3 class="mainFooter__subtitle"> EMPRESA ASOCIADA A :</h3>
+
+						<a id="footer-logo" href="<?= site_url()  ?>" class="text-xs-center">
+							<img src="<?= IMAGES ?>/footer/logo_footer_asociado.jpg" alt="logo-footer" class="center-block img-fluid" />
 						</a> <!-- /.center-block -->
 					</section> <!-- /.mainFooter__item -->
 
-				</div><!-- /.col-xs-12 col-sm-4 -->
+				</div><!-- /.col-xs-12 col-sm- -->
 
 				<!-- Informacion  -->
-				<div class="col-xs-12 col-sm-4 ">
+				<div class="col-xs-12 col-sm-6 ">
 
 					<!-- Item Footer -->
-					<section class="mainFooter__item">
+					<section id="footer-section-contact" class="mainFooter__item">
 
 						<!-- Subtitulo -->
 						<h2 class="mainFooter__subtitle text-uppercase"><?php _e('contacto', LANG ); ?></h2>
 						<!-- Lista -->
 						<ul class="mainFooter__contact-list list-unstyled">
+
 							<?php if( isset($options['contact_address']) && !empty($options['contact_address']) ) :?>
-								<li class="address"> <?= $options['contact_address']; ?> </li>
+								
+								<li class="address"> 
+									<?= apply_filters( 'the_content' , $options['contact_address'] ); ?>
+								</li>
+
 							<?php endif; ?>
 							
 							<?php if( isset($options['contact_tel']) && !empty($options['contact_tel']) ) :?>
@@ -44,9 +52,10 @@
 
 					</section> <!-- /.mainFooter__item -->
 
-				</div><!-- /.col-xs-12 col-sm-4 -->
+				</div><!-- /.col-xs-12 col-sm- -->
+
 				<!--  Redes sociales -->
-				<div class="col-xs-12 col-sm-4">
+				<div class="col-xs-12 col-sm-3">
 
 					<!-- Item Footer -->
 					<section class="mainFooter__item text-xs-center">
@@ -93,7 +102,7 @@
 
 					</section> <!-- /.mainFooter__item -->
  
-				</div><!-- /.col-xs-12 col-sm-4 -->
+				</div><!-- /.col-xs-12 col-sm- -->
 			</div><!-- /.row -->
 		</div><!-- /.container -->
 	</footer> <!-- /.mainFooter -->
