@@ -32,7 +32,7 @@ $marcas = get_posts( $args ); ?>
 		<?php foreach( $marcas as $marcas ): ?>
 			
 			<!-- Imágen -->
-			<figure class="featured-item-nosotros relative text-xs-center">
+			<figure class="featured-item-nosotros featured-item-nosotros--border relative text-xs-center">
 
 				<?= get_the_post_thumbnail( $marcas->ID , 'full' , array('class'=>'img-fluid d-block m-x-auto') ); ?>
 

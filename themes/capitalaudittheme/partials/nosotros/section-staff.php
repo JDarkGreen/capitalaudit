@@ -36,7 +36,7 @@ $staff = get_posts( $args ); ?>
 			$alt_image = has_post_thumbnail( $member->ID ) ? get_post_meta( get_post_thumbnail_id( $member->ID ) , '_wp_attachment_image_alt' , true ) : $member->post_name;  ?>
 			
 			<!-- Imágen -->
-			<figure class="featured-item-nosotros relative text-xs-center" style="background-image: url( <?= $url_image; ?> );">
+			<figure class="featured-item-nosotros featured-member relative text-xs-center" style="background-image: url( <?= $url_image; ?> );">
 
 				<!-- Figcaption -->
 				<figcaption>
