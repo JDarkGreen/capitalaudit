@@ -39,8 +39,20 @@ function load_custom_scripts()
 	//youtube
 	wp_enqueue_script('wp-youtube-lazy-load', THEMEROOT . '/js/sources/lazy-load-youtube.js', array('jquery'), '1.0.0', true);	
 
-	//script
-	wp_enqueue_script('custom_script', THEMEROOT . '/js/script.js', array('jquery'), false, true);
+	/*
+	 * Registrar Script Customizado
+	 */
+	wp_register_script('custom_script' , THEMEROOT . '/js/script.js', array('jquery'), false, true );
+
+	/* Localización del Script con la nueva data */
+	$data_array = array(
+		'themeroot' => get_stylesheet_directory_uri() 
+	);
+
+	wp_localize_script( 'custom_script', 'data' , $data_array );
+
+	/* Encolar Script */
+	wp_enqueue_script('custom_script');
 
 }
 

@@ -152,6 +152,12 @@ function GalleryFancybox()
 		/*|-----  VALIDADOR FORMULARIO.  ------|*/
 		/*|--------------------------------------------------------------|*/
 
+		/*
+		 * En el script de wordpress hemos pasado como valor de la localizacion
+		 * del tema a la variable
+		 * themeroot al objeto data
+		 */
+
 		if( j('#form-contacto').length ){
 
 			j('#form-contacto').parsley();
@@ -159,7 +165,7 @@ function GalleryFancybox()
 			j(document).on('submit', j('#form-contacto') , function(e){
 				e.preventDefault();
 				//Subir el formulario mediante ajax
-				j.post( url + '/email/enviar.php', 
+				j.post( data.themeroot + '/email/enviar.php', 
 				{ 
 					nombre : j("#input_name").val(),
 					email  : j("#input_email").val(),

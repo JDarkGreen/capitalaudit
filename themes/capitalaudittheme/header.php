@@ -58,7 +58,7 @@ endif;
 	<!-- Header -->
 	<header class="mainHeader sb-slide">
 
-		<div id="header-top-bar">
+		<div id="header-top-bar" class="hidden-xs-down">
 
 			<div class="container">
 
@@ -94,7 +94,7 @@ endif;
 		</div> <!-- /#header-top-bar -->
 
 		<!-- Navegacion principal -->
-		<nav class="mainNavigation text-xs-center">
+		<nav class="mainNavigation text-xs-center hidden-xs-down">
 
 			<div class="container">
 					<?php 
@@ -105,7 +105,6 @@ endif;
 					));
 					?>
 			</div> <!-- /.container -->
-
 		</nav><!-- /.mainNavigation -->
 
 		<!-- Solo en version mobile -->
@@ -120,11 +119,7 @@ endif;
 					<!-- Logo -->
 					<h1 class="logo">
 						<a href="<?= site_url() ?>">
-							<?php if( !empty($options['logo']) ) : ?>
-								<img src="<?= $options['logo'] ?>" alt="<?= "-logo-" . bloginfo('name') ?>" class="img-fluid center-block" />
-							<?php else: ?>
-								<img src="<?= IMAGES ?>/logo_pretelli.png" alt="<?= "-logo-" . bloginfo('name') ?>" class="img-fluid center-block" />
-							<?php endif; ?>
+							<img src="<?= $url_logo; ?>" alt="<?= "-logo-" . bloginfo('name') ?>" class="img-fluid center-block" />
 						</a>
 					</h1> <!-- /.lgoo -->	
 
@@ -142,7 +137,7 @@ endif;
 	<aside class="sidebar__content sb-slidebar sb-left sb-style-push">
 		<!-- Logo -->
 		<h1 class="logo">
-			<a href="<?= site_url() ?>"><img src="<?= IMAGES ?>/logo_pretelli.png" alt="logo-pretelli" class="img-fluid" /></a>
+			<a href="<?= site_url() ?>"><img src="<?= $url_logo; ?>" alt="logo-capitalaudit" class="img-fluid" /></a>
 		</h1><!-- /.logo -->
 
 		<!-- Navegacion principal -->
