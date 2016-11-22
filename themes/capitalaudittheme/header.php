@@ -67,7 +67,7 @@ endif;
 					<div class="col-xs-4">
 		
 						<!-- Logo -->
-						<h1 class="logo">
+						<h1 id="logo-header" class="logo">
 							<a href="<?= site_url() ?>">
 								<img src="<?= $url_logo ?>" alt="<?= get_bloginfo('description') ?>" class="img-fluid" /></a>
 						</h1><!-- /.logo -->
@@ -162,4 +162,4 @@ endif;
   	</div> <!-- /.sb-slidebar sb-right -->
 	
 	<!-- Slidebar  Contenedor -->
-<div id="mobile-container" canvas="container">
+<div id="slidebar-container" canvas="container">

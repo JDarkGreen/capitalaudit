@@ -49,10 +49,13 @@
 
 					          		<figure class="featured-image">
 
-						          	<!-- Conseguir imagen -->
+						          	<!-- Imágen -->
 						          	<?php 
-						          		$img_servicio = get_the_post_thumbnail( $servicio->ID , array('',189) , array('class'=>'img-fluid') ); 
-						          		if( !empty($img_servicio) ) echo $img_servicio; ?>
+						          		$url_image = has_post_thumbnail( $servicio->ID ) ? wp_get_attachment_url( get_post_thumbnail_id( $servicio->ID ) ) : IMAGES . '/default-service.jpg';
+
+						          		$alt_image = has_post_thumbnail( $servicio->ID ) ? get_post_meta( get_post_thumbnail_id( $servicio->ID ) , '_wp_attachment_image_alt' , true ) : $servicio->post_name;  ?>
+
+						          	<img src="<?= $url_image; ?>" alt="<?= $alt_image ?>" class="img-fluid d-block m-x-auto" />
 
 						          	</figure> <!-- /.featured-image -->
 

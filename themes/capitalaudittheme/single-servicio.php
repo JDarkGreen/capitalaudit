@@ -68,12 +68,17 @@
 			<div class="col-xs-12 col-md-6">
 
 				<!-- Imagen Destacada -->
+				<figure class="pageEmpresa__logo">
+
 				<?php 
-					$feat_image = get_the_post_thumbnail( $post->ID , 'full' , array('class'=>'img-fluid center-block') );
-					if( !empty( $feat_image )  ) : ?>
-				<figure class="pageEmpresa__logo"><?= $feat_image  ?></figure> 
+	          		$url_image = has_post_thumbnail( $post->ID ) ? wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ) : IMAGES . '/default-service.jpg';
+
+	          		$alt_image = has_post_thumbnail( $post->ID ) ? get_post_meta( get_post_thumbnail_id( $post->ID ) , '_wp_attachment_image_alt' , true ) : $post->post_name;  ?>
+
+	          		<img src="<?= $url_image; ?>" alt="<?= $alt_image ?>" class="img-fluid d-block m-x-auto" />
+					
+				</figure> 
 				<!-- /.pageEmpresa__logo -->
-				<?php else: echo "Actualizando Imagen"; endif; ?>
 
 			</div> <!-- /col-xs-6 -->
 		</div> <!-- /.row -->
