@@ -53,12 +53,12 @@ endif;
 ?>
 
 <body <?php body_class(); ?> >
-	
+
 
 	<!-- Header -->
-	<header class="mainHeader sb-slide">
+	<header class="mainHeader hidden-xs-down">
 
-		<div id="header-top-bar" class="hidden-xs-down">
+		<div id="header-top-bar">
 
 			<div class="container">
 
@@ -90,11 +90,10 @@ endif;
 				</div> <!-- /.row -->
 
 			</div> <!-- /.container -->
-		
 		</div> <!-- /#header-top-bar -->
 
 		<!-- Navegacion principal -->
-		<nav class="mainNavigation text-xs-center hidden-xs-down">
+		<nav class="mainNavigation text-xs-center">
 
 			<div class="container">
 					<?php 
@@ -107,34 +106,37 @@ endif;
 			</div> <!-- /.container -->
 		</nav><!-- /.mainNavigation -->
 
-		<!-- Solo en version mobile -->
-		<section class="hidden-sm-up">
-			<div class="mainHeader__mobile ">
-
-					<!-- Icono abrir menu lateral -->
-					<div class="icon-header">
-						<i id="toggle-left-nav" class="fa fa-bars" aria-hidden="true"></i>
-					</div><!-- /.icon-header -->
-
-					<!-- Logo -->
-					<h1 class="logo">
-						<a href="<?= site_url() ?>">
-							<img src="<?= $url_logo; ?>" alt="<?= "-logo-" . bloginfo('name') ?>" class="img-fluid center-block" />
-						</a>
-					</h1> <!-- /.lgoo -->	
-
-					<!-- Icono abrir menu lateral derecha -->
-					<div class="icon-header">
-						<i id="toggle-right-nav" class="fa fa-bars" aria-hidden="true"></i>
-					</div><!-- /.icon-header -->	
-
-			</div> <!-- /.mainHeader__mobile -->
-		</section> <!-- /.visible-xs-block -->
-
 	</header><!-- /.mainHeader -->
+
+	<!-- Header Mobile -->
+	<header class="mainHeader hidden-sm-up" canvas="">
+
+		<div class="mainHeader__mobile ">
+
+			<!-- Icono abrir menu lateral -->
+			<div class="icon-header">
+				<i id="toggle-left-nav" class="fa fa-bars" aria-hidden="true"></i>
+			</div><!-- /.icon-header -->
+
+			<!-- Logo -->
+			<h1 class="logo">
+				<a href="<?= site_url() ?>">
+					<img src="<?= $url_logo; ?>" alt="<?= "-logo-" . bloginfo('name') ?>" class="img-fluid center-block" />
+				</a>
+			</h1> <!-- /.lgoo -->	
+
+			<!-- Icono abrir menu lateral derecha -->
+			<div class="icon-header">
+				<i id="toggle-right-nav" class="fa fa-bars" aria-hidden="true"></i>
+			</div><!-- /.icon-header -->	
+
+		</div> <!-- /.mainHeader__mobile -->
+
+	</header> <!-- /.mainHeader -->
 	
 	<!-- Contenedor Izquierda versión mobile -->
-	<aside class="sidebar__content sb-slidebar sb-left sb-style-push">
+	<div class="sidebar__content" off-canvas="id-1 left push">
+	
 		<!-- Logo -->
 		<h1 class="logo">
 			<a href="<?= site_url() ?>"><img src="<?= $url_logo; ?>" alt="logo-capitalaudit" class="img-fluid" /></a>
@@ -151,13 +153,13 @@ endif;
 			?>
 		</nav><!-- /.mainNavigation -->
 
-  </aside> <!-- /.sb-slidebar sb-left -->	
+ 	</div> <!-- /.sidebar__content -->
 
-  <!-- Contenedor Izquierda versión mobile -->
-	<div class="sidebar__content sb-slidebar sb-right sb-style-push">
+  	<!-- Contenedor Izquierda versión mobile -->
+  	<div class="sidebar__content" off-canvas="id-2 right push">
 		<!-- Incluir template de categorias -->
 		<?php include(locate_template('partials/categories-posts.php') ); ?>
-  </div> <!-- /.sb-slidebar sb-right -->
-
+  	</div> <!-- /.sb-slidebar sb-right -->
+	
 	<!-- Slidebar  Contenedor -->
-	<div id="sb-site">
+<div id="mobile-container" canvas="container">

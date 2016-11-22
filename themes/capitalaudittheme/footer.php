@@ -111,7 +111,8 @@
 
 	<?php wp_footer(); ?>
 
-	</div> <!-- /fin sbslidebar - #sbslide -->
+	</div> <!-- /fin <div canvas="container"> -->
+	
 </body>
 </html>
 

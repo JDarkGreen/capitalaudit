@@ -26,23 +26,27 @@ function GalleryFancybox()
 		/*|------------------- SLIDEBAR - VERSION MOBILE ------------------------|*/
 		/*|----------------------------------------------------------------------|*/
 
-		var mySlidebars = new j.slidebars({
-			disableOver       : 568, // integer or false
-			hideControlClasses: true, // true or false
-			scrollLock        : false, // true or false
-			siteClose         : true, // true or false
-		});
+		var controller = new slidebars();
+        controller.init();
 
 		//Eventos
 
 		//Abrir contenedor izquierda
-		j("#toggle-left-nav").on('click',function(){
-			mySlidebars.slidebars.toggle('left');
+		j("#toggle-left-nav").on('click',function(e){
+			e.stopPropagation();
+			e.preventDefault();
+
+			// Toggle the Slidebar with id 'id-1'
+			controller.toggle( 'id-1' );
 		});
 
 		//Abrir contenedor derecha
-		j("#toggle-right-nav").on('click',function(){
-			mySlidebars.slidebars.toggle('right');
+		j("#toggle-right-nav").on('click',function(e){
+			e.stopPropagation();
+			e.preventDefault();
+
+			// Toggle the Slidebar with id 'id-2'
+			controller.toggle( 'id-2' );
 		});
 
 		/*|----------------------------------------------------------------------|*/
