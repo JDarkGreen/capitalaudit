@@ -157,15 +157,24 @@ include( locate_template("partials/banner-common-pages.php") );
 	    var lng = <?= $lng ?>;
 
 	    function initialize() {
+
 	      //crear mapa
 	      map = new google.maps.Map(document.getElementById('canvas-map'), {
 	        center: {lat: lat, lng: lng},
-	        zoom  : 16
+	        zoom  : 17
 	      });
 
+
+
+	      //Dirección de Empresa
+	      var addressContact = <?= isset($options['contact_address']) ? json_encode( $options['contact_address'] ) : '' ?>;
+
+	      //Texto de Marcador
+	      var contentString  = addressContact;	
+
 	      //infowindow
-	      var infowindow    = new google.maps.InfoWindow({
-	        content: '<?= "GRUPO PRETELLI" ?>'
+	      var infowindow = new google.maps.InfoWindow({
+	        content: contentString
 	      });
 
 	      //icono
