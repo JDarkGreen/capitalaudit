@@ -19,7 +19,7 @@ $staff = get_posts( $args ); ?>
 
 	<!-- Titulo -->
 	<h2 class="PageCommon__subtitle text-uppercase">
-	<?php _e( "nuestro staff" , LANG ); ?></h2> 
+	<?php _e( "nuestros socios" , LANG ); ?></h2> 
 
 	<!-- Contenedor Flexible -->
 	<div class="container-flex container-flex-center">

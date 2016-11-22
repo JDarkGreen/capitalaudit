@@ -22,7 +22,7 @@ $marcas = get_posts( $args ); ?>
 
 	<!-- Titulo -->
 	<h2 class="PageCommon__subtitle text-uppercase">
-	<?php _e( "nuestras marcas" , LANG ); ?></h2> 
+	<?php _e( "nuestros clientes" , LANG ); ?></h2> 
 
 	<!-- Contenedor Flexible -->
 	<div class="container-flex container-flex-center">
