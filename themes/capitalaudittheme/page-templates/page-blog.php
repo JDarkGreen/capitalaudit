@@ -36,7 +36,8 @@
 				<article class="pageBlog__article pageBlog__article--preview">
 					<!-- Imagen -->
 					<figure>
-						<a href="<?= $articulo->guid ?>">
+						<a href="<?= get_the_permalink($articulo->ID) ?>" title="<?= $articulo->post_title; ?>">
+
 						<?php $feat_img = get_the_post_thumbnail( $articulo->ID,'full',array('class'=>'img-fluid'));  
 							if( !empty($feat_img) ) : echo $feat_img; else :
 						?>
@@ -47,7 +48,7 @@
 					<!-- Titulo --> <h2><?= $articulo->post_title ?></h2>
 					<!-- Extracto --> <?= apply_filters( 'the_content' , wp_trim_words( $articulo->post_content , '30' , '' ) ); ?>
 					<!-- Link a articulo -->
-					<a class="read-more" href="<?= $articulo->guid ?>">Leer más 
+					<a class="read-more" href="<?= get_the_permalink($articulo->ID) ?>" title="<?= $articulo->post_title; ?>"> Leer más 
 						<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
 					</a>
 
