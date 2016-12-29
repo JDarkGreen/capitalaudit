@@ -167,23 +167,38 @@ function GalleryFancybox()
 			j('#form-contacto').parsley();
 
 			j(document).on('submit', j('#form-contacto') , function(e){
+
 				e.preventDefault();
+
 				//Subir el formulario mediante ajax
-				j.post( data.themeroot + '/email/enviar.php', 
+				j.post( info.themeroot + '/email/enviar.php', 
 				{ 
 					nombre : j("#input_name").val(),
 					email  : j("#input_email").val(),
 					tel    : j("#input_tel").val(),
 					asunto : j("#input_subject").val(),
 					message: j("#input_consulta").val(),
-				},function(data){
-					alert( data );
 
-					j("#input_name").val("");
-					j("#input_email").val("");
-					j("#input_tel").val("");
-					j("#input_subject").val("");
-					j("#input_consulta").val("");
+				},function(result){
+
+					var resultado = j.parseJSON( result );
+					
+					console.log(resultado);
+
+					alert( resultado.message );
+
+					if( resultado.status === 'ok' )
+					{
+						j("#input_name").val("");
+						j("#input_email").val("");
+						j("#input_tel").val("");
+						j("#input_subject").val("");
+						j("#input_consulta").val("");
+
+					}
+					
+					window.location.reload(false);					
+
 				});			
 			});
 		}

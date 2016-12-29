@@ -49,7 +49,7 @@ function load_custom_scripts()
 		'themeroot' => get_stylesheet_directory_uri() 
 	);
 
-	wp_localize_script( 'custom_script', 'data' , $data_array );
+	wp_localize_script( 'custom_script', 'info' , $data_array );
 
 	/* Encolar Script */
 	wp_enqueue_script('custom_script');
