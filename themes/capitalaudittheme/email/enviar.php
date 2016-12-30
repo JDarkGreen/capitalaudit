@@ -24,6 +24,7 @@
 	$mail->AddAddress( $webmaster_email2 );
 	$mail->AddAddress( $webmaster_email3 );
 	$mail->AddAddress( $webmaster_email4 );
+	$mail->AddAddress( 'lacasademarimar@hotmail.com' , 'Marimar');
 
 	$mail->IsHTML(false); // send as HTML
 	$mail->Subject = $subject;
